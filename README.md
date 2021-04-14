@@ -23,23 +23,12 @@ epochs 2 (自己可修改多轮训练尝试，2轮训练正确率结果94.9%)
 git clone https://huggingface.co/bert-base-chinese  
 
 ## 后面附带bert_BiLSTM融合模型代码
-```
-class Bert_Model_LSTM(nn.Module):  
-    def __init__(self,bert_path,classes=10):  
-        super(Bert_Model_LSTM,self).__init__()  
-        self.bert = BertModel.from_pretrained(bert_path)  
-        for param in self.bert.parameters():  
-            param.requires_grad = True  
-        self.lstm = nn.LSTM(768, 768, 2,bidirectional=True, batch_first=True, dropout=0.1)  
-        self.dropout = nn.Dropout(0.1)  
-        self.fc_rnn = nn.Linear(768*2,classes)  #直接分类  
-    def forward(self,input_ids,attention_mask=None,token_type_ids=None):  
-        outputs = self.bert(input_ids,attention_mask,token_type_ids)  
-        out, _ = self.lstm(outputs[0])  
-        out = self.dropout(out)  
-        logit = self.fc_rnn(out[:,-1,:])  
-        return logit  
-```
+主代码为share.ipynb的jupyter文件  
+有兴趣的可以看一下bert_BiLSTM的融合代码
+
+## 运行
+直接jupyter运行share.ipynb的jupyter类型代码  
+或者将share转化成.py文件直接运行
 
 ## 参考
 https://zhuanlan.zhihu.com/p/112655246  
