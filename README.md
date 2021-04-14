@@ -40,4 +40,8 @@ class Bert_Model_LSTM(nn.Module):
         logit = self.fc_rnn(out[:,-1,:])  
         return logit  
 ```
+
 ## 参考
+https://zhuanlan.zhihu.com/p/112655246  
+https://github.com/649453932/Bert-Chinese-Text-Classification-Pytorch  
+
