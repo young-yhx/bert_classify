@@ -20,7 +20,7 @@ device cuda
 epochs 2 (自己可修改多轮训练尝试，2轮训练正确率结果94.9%)  
 
 ## 后面附带bert_BiLSTM融合模型代码
-
+```
 class Bert_Model_LSTM(nn.Module):  
     def __init__(self,bert_path,classes=10):  
         super(Bert_Model_LSTM,self).__init__()  
@@ -36,5 +36,5 @@ class Bert_Model_LSTM(nn.Module):
         out = self.dropout(out)  
         logit = self.fc_rnn(out[:,-1,:])  
         return logit  
-        
+```
 ## 参考
