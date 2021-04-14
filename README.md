@@ -17,7 +17,10 @@ transformers 4.3.3
 batch_size 64  
 max_len 30  
 device cuda  
-epochs 2 (自己可修改多轮训练尝试，2轮训练正确率结果94.9%)  
+epochs 2 (自己可修改多轮训练尝试，2轮训练正确率结果94.9%)
+
+### 预训练模型下载 放在bert_model  包含config.json,pytorch_model.bin,vocab_txt
+git clone https://huggingface.co/bert-base-chinese  
 
 ## 后面附带bert_BiLSTM融合模型代码
 ```
