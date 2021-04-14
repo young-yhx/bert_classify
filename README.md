@@ -2,10 +2,10 @@
 bert新闻十分类模型
 
 ## 版本问题
-python 3.6
-pytorch 1.7
-transformers 4.3.3
-一块GPU，2次EPOCH训练时间不超30min
+python 3.6  
+pytorch 1.7  
+transformers 4.3.3  
+一块GPU，2次EPOCH训练时间不超30min  
 
 ## 数据预处理
 数据分train，dev，test，三个txt文件
